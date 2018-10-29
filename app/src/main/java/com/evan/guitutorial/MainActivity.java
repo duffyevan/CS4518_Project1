@@ -11,6 +11,7 @@ import java.io.IOException;
 import java.io.InputStream;
 
 public class MainActivity extends AppCompatActivity {
+    ImageView kittenView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setupImages() throws IOException {
-        ImageView kittenView = findViewById(R.id.kittenView);
+        kittenView = findViewById(R.id.kittenView);
         this.setImageViewDrawableFromPath(kittenView, "KittenPictures/Fran.JPG");
     }
 
@@ -37,10 +38,20 @@ public class MainActivity extends AppCompatActivity {
     public void onLeftButtonPressed(View v){
         Toast toast = Toast.makeText(getApplicationContext(), "Thanks For Pressing The Left Button!", Toast.LENGTH_SHORT);
         toast.show();
+        try {
+            this.setImageViewDrawableFromPath(kittenView, "KittenPictures/Orange_And_Frosting.JPG");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void onRightButtonPressed(View v){
         Toast toast = Toast.makeText(getApplicationContext(), "Thanks For Pressing The Right Button!", Toast.LENGTH_SHORT);
         toast.show();
+        try {
+            this.setImageViewDrawableFromPath(kittenView, "KittenPictures/Frosting.JPG");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
