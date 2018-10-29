@@ -1,8 +1,7 @@
 package com.evan.guitutorial;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Toast;
 
@@ -14,9 +13,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void onButtonPressed(View v){
-        Log.d("Button Event Recieved!", v.toString());
-        Toast toast = Toast.makeText(getApplicationContext(), "Thanks For Pressing!", Toast.LENGTH_SHORT);
+    public void onLeftButtonPressed(View v){
+        Toast toast = Toast.makeText(getApplicationContext(), "Thanks For Pressing The Left Button!", Toast.LENGTH_SHORT);
+        toast.show();
+    }
+
+    public void onRightButtonPressed(View v){
+        Toast toast = Toast.makeText(getApplicationContext(), "Thanks For Pressing The Right Button!", Toast.LENGTH_SHORT);
         toast.show();
     }
 }

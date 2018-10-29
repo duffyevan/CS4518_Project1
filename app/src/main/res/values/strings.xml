@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">GUI Tutorial</string>
-    <string name="ButtonText">Button!</string>
+    <string name="LButtonText">Left Button!</string>
+    <string name="RButtonText">Right Button!</string>
 </resources>
