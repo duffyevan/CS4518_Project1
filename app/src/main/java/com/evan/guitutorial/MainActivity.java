@@ -24,11 +24,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setupImages() throws IOException {
-        ImageView kittenView = (ImageView) findViewById(R.id.kittenView);
-        InputStream kittenImageStream = getAssets().open("KittenPictures/Frosting.JPG");
-        Drawable kittenImage = Drawable.createFromStream(kittenImageStream, null);
-        kittenView.setImageDrawable(kittenImage);
+        ImageView kittenView = findViewById(R.id.kittenView);
+        this.setImageViewDrawableFromPath(kittenView, "KittenPictures/Fran.JPG");
+    }
 
+    public void setImageViewDrawableFromPath(ImageView view, String filePath) throws IOException {
+        InputStream imageStream = getAssets().open(filePath);
+        Drawable image = Drawable.createFromStream(imageStream, null);
+        view.setImageDrawable(image);
     }
 
     public void onLeftButtonPressed(View v){
