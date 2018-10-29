@@ -1,9 +1,14 @@
 package com.evan.guitutorial;
 
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
+
+import java.io.IOException;
+import java.io.InputStream;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -11,6 +16,19 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        try {
+            this.setupImages();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void setupImages() throws IOException {
+        ImageView kittenView = (ImageView) findViewById(R.id.kittenView);
+        InputStream kittenImageStream = getAssets().open("KittenPictures/Frosting.JPG");
+        Drawable kittenImage = Drawable.createFromStream(kittenImageStream, null);
+        kittenView.setImageDrawable(kittenImage);
+
     }
 
     public void onLeftButtonPressed(View v){

@@ -7,8 +7,9 @@
     tools:context=".MainActivity">
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
-        android:layout_height="132dp"
+        android:layout_height="60dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
@@ -34,5 +35,21 @@
             android:onClick="onRightButtonPressed"
             android:text="@string/RButtonText" />
     </LinearLayout>
+
+    <ImageView
+        android:id="@+id/kittenView"
+        android:layout_width="0dp"
+        android:layout_height="427dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/KittenViewDescription"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/ic_launcher_round" />
 
 </android.support.constraint.ConstraintLayout>

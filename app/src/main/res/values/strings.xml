@@ -2,4 +2,5 @@
     <string name="app_name">GUI Tutorial</string>
     <string name="LButtonText">Left Button!</string>
     <string name="RButtonText">Right Button!</string>
+    <string name="KittenViewDescription">Picture Of A Cute Kitten</string>
 </resources>
